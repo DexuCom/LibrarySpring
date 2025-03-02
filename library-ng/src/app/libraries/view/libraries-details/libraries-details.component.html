@@ -1,0 +1,43 @@
+<article *ngIf="library">
+    <header><h2>{{library.name}}</h2></header>
+  
+    <div class="container">
+        <div class="row">
+          <div class="row mb-2">
+            <div class="col-6">
+              <b>ID: </b>
+              <span>{{library.id}}</span>
+            </div>
+          </div>
+        </div>
+        <tr>
+          <td>
+            <button [routerLink]="['/books/add']">Add book</button>
+          </td>
+        </tr>
+        <table *ngIf="books">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>View</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let book of books">
+              <td>{{book.title}}</td>
+              <td>
+                <button [routerLink]="['/books', book.id]">View</button>
+              </td>
+              <td>
+                <button [routerLink]="['/books', book.id, 'edit']">Edit</button>
+              </td>
+              <td>
+                <button (click)="onDelete(book)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+</article>
+  

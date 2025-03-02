@@ -1,0 +1,42 @@
+<article *ngIf="book">
+    <header><h2>{{book.title}}</h2></header>
+  
+    <div class="container">
+        <div class="row">
+          <div class="row mb-2">
+            <div class="col-6">
+              <b>ID: </b>
+              <span>{{book.id}}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+            <div class="row mb-2">
+              <div class="col-6">
+                <b>Author: </b>
+                <span>{{book.author}}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="row mb-2">
+              <div class="col-6">
+                <b>Pages: </b>
+                <span>{{book.pages}}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="row mb-2">
+              <div class="col-6">
+                <b>Library: </b>
+                <span>{{book.library}}</span>
+              </div>
+            </div>
+          </div>
+    </div>
+</article>
+  

@@ -1,0 +1,42 @@
+<article *ngIf="book">
+    <header><h2>Edit book</h2></header>
+  
+    <form class="container"  #form="ngForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-4 p-2">
+          <div>
+            <label for="title">Title: </label>
+            <input id="title" name="title" [(ngModel)]="book.title"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-4 p-2">
+          <div>
+            <label for="author">Author: </label>
+            <input id="author" name="author" [(ngModel)]="book.author"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-4 p-2">
+          <div>
+            <label for="pages">Pages: </label>
+            <input id="pages" name="pages" [(ngModel)]="book.pages"/>
+          </div>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-2 p-2">
+          <button type="submit">Update</button>
+        </div>
+        <div class="col-2 p-2">
+          <button type="button" (click)="form.resetForm(original)">Reset</button>
+        </div>
+      </div>
+    </form>
+  </article>
+  

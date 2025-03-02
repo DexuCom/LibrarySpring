@@ -1,0 +1,33 @@
+<article class="text--justified">
+  <header><h2>Libraries</h2></header>
+
+  <tr>
+    <td>
+      <button [routerLink]="['/libraries/add']">Add library</button>
+    </td>
+  </tr>
+  <table *ngIf="libraries">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>View</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let library of libraries">
+        <td>{{library.name}}</td>
+        <td>
+          <button [routerLink]="['/libraries', library.id]">View</button>
+        </td>
+        <td>
+          <button [routerLink]="['/libraries', library.id, 'edit']">Edit</button>
+        </td>
+        <td>
+          <button (click)="onDelete(library)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</article>

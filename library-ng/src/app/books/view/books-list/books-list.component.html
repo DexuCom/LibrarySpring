@@ -1,0 +1,34 @@
+<article class="text--justified">
+    <header><h2>Books</h2></header>
+  
+    <tr>
+      <td>
+        <button [routerLink]="['/books/add']">Add book</button>
+      </td>
+    </tr>
+    <table *ngIf="books">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>View</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of books">
+          <td>{{book.title}}</td>
+          <td>
+            <button [routerLink]="['/books', book.id]">View</button>
+          </td>
+          <td>
+            <button [routerLink]="['/books', book.id, 'edit']">Edit</button>
+          </td>
+          <td>
+            <button (click)="onDelete(book)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </article>
+  
