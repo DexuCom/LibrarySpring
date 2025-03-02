@@ -1,0 +1,92 @@
+### Library ###
+
+# 1. Get all libraries
+GET http://localhost:8083/api/libraries
+Accept: application/json
+
+###
+
+# 2. Get a specific library by ID
+GET http://localhost:8083/api/libraries/3c190f60-2170-4440-8675-fb89e26c35d8
+Accept: application/json
+
+###
+
+# 2.1. Get books in library by ID
+GET http://localhost:8083/api/libraries/2f9fc611-24be-48eb-9884-a1336aa6cee9/books
+Accept: application/json
+
+###
+
+# 2.2. Get specific book in library by ID
+
+GET http://localhost:8083/api/libraries/2f9fc611-24be-48eb-9884-a1336aa6cee9/books/3c190f60-2170-4440-8675-fb89e16c35d8
+Accept: application/json
+
+###
+
+# 3. Create a new library
+POST http://localhost:8083/api/libraries
+Content-Type: application/json
+
+{
+    "name": "Czytamy Ksiazki"
+}
+
+###
+
+# 4. Update an existing library
+PUT http://localhost:8083/api/libraries/3c190f60-2170-4440-8675-fb89e26c35d8
+Content-Type: application/json
+
+{
+    "name": "Empiczek"
+}
+
+###
+
+# 5. Delete a library by ID
+DELETE http://localhost:8083/api/libraries/3c190f60-2170-4440-8675-fb89e26c35d8
+
+### Book ###
+
+# 6. Get all books in a specific library
+GET http://localhost:8083/api/books
+Accept: application/json
+
+###
+
+# 7. Get a specific book by ID within a library
+GET http://localhost:8083/api/books/3c190f60-2170-4440-8675-fb89e16c35d8
+Accept: application/json
+
+###
+
+# 8. Create a new book in a library
+POST http://localhost:8083/api/books
+Content-Type: application/json
+
+{
+    "title": "Hobbit",
+    "author": "J. R. R. Tolkien",
+    "pages": 300,
+    "library": "2f9fc611-24be-48eb-9884-a1336aa6cee9"
+}
+
+###
+
+# 9. Update an existing book
+PUT http://localhost:8083/api/books/3c190f60-2170-4440-8675-fb89e16c35d8
+Content-Type: application/json
+
+{
+    "title": "Lord Of The Rings",
+    "author": "J. R. R. Tolkien",
+    "pages": 320
+}
+
+###
+
+# 10. Delete a book by ID within a library
+DELETE http://localhost:8083/api/books/3c190f60-2170-4440-8675-fb89e16c35d8
+
